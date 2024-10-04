@@ -36,4 +36,9 @@ export class CreateProductDto {
     @IsIn(['men', 'women', 'kid', 'unisex'])
     public gender: string;
 
+    @IsString({ each: true })
+    @IsArray()
+    public images?:string[];
+
+
 }
