@@ -113,7 +113,7 @@ export class ProductsService {
 
     if (!product) throw new NotFoundException(`Product with id: ${id} not found`);
 
-    //Create query Runner
+    //Crear query Runner
     const queryRunner = this.dataSource.createQueryRunner();
     await queryRunner.connect();//Conectar a la db
     await queryRunner.startTransaction();//iniciar transacción
@@ -145,7 +145,7 @@ export class ProductsService {
     await this.productRepository.remove(product);
   }
 
-
+  //! Borrar todos los productos
   async deleteAllProducts() {
     const query = this.productRepository.createQueryBuilder('product');
     try {
